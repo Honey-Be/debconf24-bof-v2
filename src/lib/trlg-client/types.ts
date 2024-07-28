@@ -311,12 +311,10 @@ export function* _pscInternal(tokens: string[]) {
                 yield [loc, amountToSell] as [number, number]
                 continue
             } else {
-                yield null
-                continue
+                throw "null detected"
             }
         } else {
-            yield null
-            continue
+            throw "null detected"
         }
     }
 }
@@ -333,24 +331,23 @@ export function* filterSalesCommand(cmdlets: Map<number, number>, nowOwning: Map
 
 export function parseSalesCommand(cmd: string, nowOwning: Map<number, {operatorId: 0|1|2|3, amount: number}>): SalesType {
     const tokens = cmd.split(" ")
-    const raw = Array.from(_pscInternal(tokens))
-    for(const rawItem of raw) {
-        if(rawItem) {
-            continue
-        } else {
-            return new Map<number, number>()
-        }
+    try {
+        const raw = Array.from(_pscInternal(tokens))
+        const cmdlets = new Map(raw)
+        const dict = Array.from(filterSalesCommand(cmdlets,nowOwning)).reduce<Map<number, number>>(
+            (acc, [loc, amountToSell]) => {
+                let output: typeof acc = new Map(acc)
+                const got = output.get(loc)
+                const tmp = (got !== undefined) ? (amountToSell + got) : amountToSell
+                return output.set(loc,Math.min(tmp,(nowOwning.get(loc)?.amount) as number))
+            },new Map<number, number>()
+        )
+        return dict
     }
-    const cmdlets = new Map(raw.filter((item) => (item !== null)))
-    const dict = Array.from(filterSalesCommand(cmdlets,nowOwning)).reduce<Map<number, number>>(
-        (acc, [loc, amountToSell]) => {
-            let output: typeof acc = new Map(acc)
-            const got = output.get(loc)
-            const tmp = (got !== undefined) ? (amountToSell + got) : amountToSell
-            return output.set(loc,Math.min(tmp,(nowOwning.get(loc)?.amount) as number))
-        },new Map<number, number>()
-    )
-    return dict
+    catch {
+        return new Map<number, number>()
+    }
+    
 }
 
 export abstract class ModalOrNoticeBase extends HTMLElement {
