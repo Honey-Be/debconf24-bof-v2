@@ -2,7 +2,6 @@ import { Redis } from "@upstash/redis"
 import type { ActorStorageJSON, StorageAdapter } from "../storage";
 import { loadStoragePool } from "socketio.config";
 import { AsyncActorStorage } from "../actors";
-import { webcrypto } from "crypto";
 
 
 const jsonPool: {
@@ -82,7 +81,7 @@ export default class UpstashRedisAdapter implements StorageAdapter<true> {
         const got = (await redis.json.get<string[]>("id", "$")) ?? []
         let generated: string
         do {
-            generated = Array.from(webcrypto.getRandomValues(new Uint32Array(1))).map((item) => item.toString(36)).join("").toLowerCase()
+            generated = Array.from(crypto.getRandomValues(new Uint32Array(1))).map((item) => item.toString(36)).join("").toLowerCase()
         } while(got.includes(generated))
         return generated
     }
