@@ -2,7 +2,7 @@
     "rewrites": [
       {
         "source": "/(.*)",
-        "destination": "/express-api"
+        "destination": "/api"
       }
     ],
     "headers": [
