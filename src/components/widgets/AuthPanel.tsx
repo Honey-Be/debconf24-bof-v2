@@ -1,6 +1,4 @@
 import { component$ } from "@builder.io/qwik";
-import { Form, useLocation } from "@builder.io/qwik-city";
-import WrappedGameControlView from "~/components/the-revised-landlords-game/WrappedGameControlView";
 import { useSession, useSignIn, useSignOut } from "~/routes/plugin@auth";
 
 export default component$(() => {
