@@ -48,3 +48,6 @@ tmp
 
 # Netlify
 .netlify
+
+.env
+.env.*
