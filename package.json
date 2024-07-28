@@ -30,6 +30,7 @@
     "qwik": "qwik"
   },
   "dependencies": {
+    "@auth/core": "^0.34.2",
     "@fontsource-variable/inter": "^5.0.18",
     "@modular-forms/qwik": "^0.26.1",
     "@rimbu/core": "^2.0.3",
