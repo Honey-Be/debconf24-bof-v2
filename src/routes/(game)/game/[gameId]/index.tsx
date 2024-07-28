@@ -21,7 +21,7 @@ export default component$(() => {
                         </div>
                     </div>
                 </div>
-                <div q:slot="right-side" style={{height: 616, width: 493}}>
+                <div q:slot="right-side" style={{height: 616, width: 473.92}}>
                     <div class="flex w-full sm:w-auto">
                         {session.value?.user?.email ? <a class="btn btn-primary sm:mb-0 w-full"
                             href={`https://debconf24-bof.newsniper.org/game/${gameId}/play`}

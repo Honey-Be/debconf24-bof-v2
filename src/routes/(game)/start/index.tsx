@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import ViewContainer from "~/components/the-revised-landlords-game/ViewContainer";
 import { Image } from "@unpic/qwik";
 import { Form } from "@builder.io/qwik-city";
-import StartGame from "~/context/form/startGame";
+import StartGame from "~/context/form/StartGame";
 import { useSession } from "~/routes/plugin@auth";
 
 const coverImage =
@@ -20,11 +20,11 @@ export default component$(() => {
                 <div q:slot="left-side">
                     <StartGame hostEmail={session.value.user.email}/>
                 </div>
-                <div q:slot="right-side" style={{width:493, height: 616}}>
+                <div q:slot="right-side" style={{width:473.92, height: 616}}>
                     <Image
                         src={coverImage}
                         layout="constrained"
-                        width={493}
+                        width={473.92}
                         height={616}
                         alt="Qwind Hero Image (Cool dog)"
                         class="mx-auto lg:mr-0 w-full drop-shadow-2xl rounded-md"
