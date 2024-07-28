@@ -333,9 +333,13 @@ export function* filterSalesCommand(cmdlets: Map<number, number>, nowOwning: Map
 
 export function parseSalesCommand(cmd: string, nowOwning: Map<number, {operatorId: 0|1|2|3, amount: number}>): SalesType {
     const tokens = cmd.split(" ")
-    const raw = [..._pscInternal(tokens)]
-    if(raw.includes(null)) {
-        new Map<number, number>()
+    const raw = Array.from(_pscInternal(tokens))
+    for(const rawItem of raw) {
+        if(rawItem) {
+            continue
+        } else {
+            return new Map<number, number>()
+        }
     }
     const cmdlets = new Map(raw.filter((item) => (item !== null)))
     const dict = Array.from(filterSalesCommand(cmdlets,nowOwning)).reduce<Map<number, number>>(
