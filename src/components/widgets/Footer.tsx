@@ -11,7 +11,7 @@ export default component$(() => {
   const social: {label: string, icon: () => JSXOutput, href: string}[] = [
     { label: "Instagram", icon: IconInstagram, href: "https://www.instagram.com/newsniper_ybi" },
     { label: "Github", icon: IconGithub, href: "https://github.com/newsniper-org" },
-    { label: "NEWSNIPER", icon: IconNEWSNIPER, href: "https://newsniper.org" }
+    { label: "NEWSNIPER", icon: IconNEWSNIPER, href: "https://newsniper.org/" }
   ];
 
   return (

@@ -12,7 +12,7 @@ export const { onRequest, useSession, useSignIn, useSignOut } = QwikAuth$(
     })],
     callbacks: {
       async redirect({url, baseUrl}) {
-          return url
+          return baseUrl
       },
     }
   }),
