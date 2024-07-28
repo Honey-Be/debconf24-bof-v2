@@ -1,4 +1,4 @@
-import { circularPushMap } from "@/lib/utils";
+import { circularPushMap } from "~/lib/utils";
 import { BiMap } from "@rimbu/core";
 
 
