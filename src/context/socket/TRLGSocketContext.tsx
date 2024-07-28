@@ -14,7 +14,7 @@ export interface SocketClient<T> {
     gameId: Signal<string>;
     playerId: Signal<0|1|2|3|null>;
     nowPlayerAccount: Signal<string>;
-};
+}
   
 export const TRLGSocketContext = createContextId<SocketClient<TRLGClient>>('socket.context');
 
