@@ -111,7 +111,10 @@ export function getRanks(context: SerializedGameContext): [RankType, RankType, R
     const {
         mainStatuses: { players, landProperties }
     } = context
-    const allProperties = landProperties.locations.map((loc) => (landProperties.map[loc] !== undefined) ? landProperties.map[loc] : null).filter((item) => item !== null)
+    // const allProperties = landProperties.locations.map((loc) => (landProperties.map[loc] !== undefined) ? landProperties.map[loc] : null).filter((item) => item !== null)
+    const allProperties = landProperties.locations.filter((loc) => (landProperties.map[loc] !== undefined) && (landProperties.map[loc] !== null)).map((loc) => landProperties.map[loc])
+    
+    
     const eachSum = [...([0,1,2,3] as const).map((pid) => {
         const builtSum = allProperties.filter(({operatorId}) => operatorId === pid).reduce((acc, {amount}) => acc+amount, 0)
         const sum = (builtSum * 300000) + players[pid].cash
