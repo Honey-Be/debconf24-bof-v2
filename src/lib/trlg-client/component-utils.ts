@@ -48,7 +48,7 @@ export function getUseTicketModalDisplay(state: string): string {
 
 export function* filterMyLandProps(locs: number[], lps: SerializedLandProperties, pid: 0|1|2|3) {
     for(const loc of locs) {
-        if((loc in lps) && (lps[loc].operatorId === pid) && (Math.floor(lps[loc].amount) >= 1)) {
+        if((lps[loc] !== null) && (lps[loc].operatorId === pid) && (Math.floor(lps[loc].amount) >= 1)) {
             yield [loc, {
                 operatorId: pid,
                 amount: Math.floor(lps[loc].amount)
