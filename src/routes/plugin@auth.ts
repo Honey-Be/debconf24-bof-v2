@@ -9,11 +9,6 @@ export const { onRequest, useSession, useSignIn, useSignOut } = QwikAuth$(
     providers: [DebianSalsa({
       clientId: process.env.DEBIAN_SALSA_CLIENT_ID,
       clientSecret: process.env.DEBIAN_SALSA_CLIENT_SECRET,
-    })],
-    callbacks: {
-      async redirect({url, baseUrl}) {
-          return baseUrl
-      },
-    }
+    })]
   }),
 );

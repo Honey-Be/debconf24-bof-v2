@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { Form, useLocation } from "@builder.io/qwik-city";
+import { Form, Link, useLocation } from "@builder.io/qwik-city";
 import WrappedGameControlView from "~/components/the-revised-landlords-game/WrappedGameControlView";
 import { useSession, useSignIn } from "~/routes/plugin@auth";
 
@@ -14,10 +14,11 @@ export default component$(() => {
     } else {
         return <>
             <p>You need to login first.</p>
-            <Form action={signIn}>
-                <input type="hidden" name="providerId" value="debian-salsa" />
-                <button>Sign In</button>
-            </Form>
+            <Link
+                class="btn btn-primary ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto"
+                onClick$={() => {signIn.submit({providerId: "debian-salsa"})}}>
+                Login
+            </Link>
         </>
     }
 });
