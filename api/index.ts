@@ -1,1 +1,1 @@
-export * from '../src/entry.express.js';
+export * from '../src/entry.express';
