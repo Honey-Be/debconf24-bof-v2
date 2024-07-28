@@ -1,12 +1,12 @@
 export const SITE = {
-  name: "Qwind",
+  name: "The Revised Landlord's Game",
 
   title:
-    "Qwind — Free template for Qwik + Tailwind CSS to build your new website.",
+    "Qwind — research to port <Two Worlds: Sharing vs Monopoly>",
   description:
-    "Qwind is a free and ready to start template to make your website using Qwik and Tailwind CSS.",
+    "Qwind is the research to port <Two Worlds: Sharing vs Monopoly> ㅡ a game derived from <The Landlord's Game> (Elizabeth Magie, 1904) and developed by Jubilee & Land Justice Association ㅡ to the web using Qwik, Socket.IO, and Redis",
 
-  origin: "https://qwind.pages.dev",
+  origin: "https://debconf24-bof.newsniper.org/",
   basePathname: "/",
   trailingSlash: true,
 };

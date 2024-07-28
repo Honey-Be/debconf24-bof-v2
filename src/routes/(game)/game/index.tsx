@@ -1,11 +1,11 @@
 import { component$ } from "@builder.io/qwik";
+import HowToAccess from "~/components/widgets/HowToAccess";
 
-import Hero from "~/components/widgets/Hero";
 
 export default component$(() => {
   return (
     <>
-      <Hero />
+      <HowToAccess/>
     </>
   );
 });

@@ -4,6 +4,7 @@ import { qwikCity } from '@builder.io/qwik-city/vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 import { SITE } from './src/config.mjs';
+import socketioConfig from 'socketio.config';
 
 export default defineConfig(() => {
     return {
@@ -14,6 +15,7 @@ export default defineConfig(() => {
             }),
             qwikVite(),
             tsconfigPaths(),
+            socketioConfig
         ],
         preview: {
             headers: {
