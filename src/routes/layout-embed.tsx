@@ -4,7 +4,7 @@ export default component$(() => {
   return (
     <>
       <main>
-        <Slot />
+        <Slot /> 
       </main>
     </>
   );
