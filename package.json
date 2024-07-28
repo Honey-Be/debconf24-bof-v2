@@ -18,7 +18,7 @@
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adapters/express/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
-    "deploy": "vercel deploy",
+    "deploy": "fly deploy",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
@@ -50,6 +50,7 @@
     "@builder.io/qwik": "^1.5.6",
     "@builder.io/qwik-city": "^1.5.6",
     "@divriots/jampack": "^0.24.4",
+    "@flydotio/dockerfile": "^0.5.8",
     "@tailwindcss/typography": "^0.5.13",
     "@types/compression": "^1.7.2",
     "@types/eslint": "^8.56.10",
@@ -68,7 +69,6 @@
     "prettier-plugin-tailwindcss": "^0.6.2",
     "tailwindcss": "3.4.4",
     "typescript": "5.4.5",
-    "vercel": "^29.1.1",
     "vite": "^5.2.13",
     "vite-tsconfig-paths": "^4.3.2"
   }
