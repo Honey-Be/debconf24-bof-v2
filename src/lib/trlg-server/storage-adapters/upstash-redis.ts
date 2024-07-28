@@ -9,8 +9,8 @@ const jsonPool: {
 } = {}
 
 const redis = new Redis({
-    url: import.meta.env.NEXT_UPSTASH_REDIS_REST_URL,
-    token: import.meta.env.NEXT_UPSTASH_REDIS_REST_TOKEN
+    url: process.env.NEXT_UPSTASH_REDIS_REST_URL,
+    token: process.env.NEXT_UPSTASH_REDIS_REST_TOKEN
 })
 
 export async function getGameIdList() {
