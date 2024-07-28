@@ -16,7 +16,7 @@ export default component$(() => {
               <span class="hidden lg:inline">DebConf24 BoF demo built with </span> <span class="text-[#039de1]">Qwik</span> +{" "}
               <span class="sm:whitespace-nowrap text-[#039de1]">Tailwind CSS</span> +{" "}<span class="sm:whitespace-nowrap text-[#039de1]">SocketIO</span> +{" "}<span class="sm:whitespace-nowrap text-[#039de1]">Redis</span>
             </h1>
-            <div class="max-w-3xl mx-auto lg:max-w-none">
+            <div class="max-w-2xl mx-auto lg:max-w-none">
               <p class="text-xl text-muted mb-6 dark:text-slate-300">
                 <span class="font-semibold underline decoration-wavy decoration-1 decoration-secondary-600 underline-offset-2">
                   The Revised Landlord's Game

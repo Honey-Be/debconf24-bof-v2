@@ -15,7 +15,7 @@ export default component$(() => {
         return <>
             <p>You need to login first.</p>
             <Form action={signIn}>
-                <input type="hidden" name="providerId" value="debian-salsa" />
+                <input type="hidden" name="providerId" value="github" />
                 <button>Sign In</button>
             </Form>
         </>
